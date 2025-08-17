@@ -54,8 +54,8 @@ website-analysis-api/
 ## ⚙️ Setup & Installation  
 ```bash
 # Clone repo
-git clone https://github.com/<your-username>/website-analysis-api.git
-cd website-analysis-api
+git clone https://github.com/gauravjaiswal9/Nurdd_Assignment.git
+cd Nurdd_Assignment
 
 # Install dependencies
 npm install
@@ -163,18 +163,23 @@ curl -X DELETE http://localhost:8080/api/websites/<id>
 ---
 
 ## 🚀 Deployment  
-```bash
-# Push code to GitHub
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
+- **GitHub Repo**: [Nurdd_Assignment](https://github.com/gauravjaiswal9/Nurdd_Assignment)  
+- **Deployed API**: [https://nurdd-assignment.onrender.com](https://nurdd-assignment.onrender.com)  
+- **Postman Collection**: [Click here](https://www.postman.com/joint-operations-technologist-23000549/workspace/my-workspace/collection/43959731-f362ab72-8eb6-4fa8-9d17-367b994aa30f?action=share&source=copy-link&creator=43959731)  
 
+---
 
 ## 📝 Approach & Challenges  
-- Handled websites with missing metadata using multiple fallbacks (`og:site_name`, `title`, `h1`)  
-- Error handling for invalid URLs and unreachable sites  
-- Added Helmet (security), Rate limiting (abuse protection), Morgan (logging)  
-- Designed to be **secure, extensible, and production-ready**  
+For this project, I designed a **Website Analysis API** using Node.js with Express and MongoDB. The API accepts a website URL, validates its format, and scrapes relevant details like brand name and description.  
 
-this is my old readme.md file give me updated readme.md according to changes
+To achieve this, I used **Axios + Cheerio** for fast, lightweight HTML parsing instead of Puppeteer, since most sites expose required metadata without needing full browser rendering. This ensures better performance and fewer deployment issues on Render.  
+
+The extracted data is stored in MongoDB with timestamps, enabling full **CRUD operations**. I implemented robust error handling for invalid URLs, unreachable sites, and missing metadata, with fallbacks (`og:site_name`, `<title>`, `<h1>`).  
+
+The architecture is **modular**, separating concerns into routes, controllers, and services for maintainability. API endpoints were tested with Postman, and the service is deployed on Render for public access.  
+
+🔮 **Future Enhancements**: Puppeteer support for JavaScript-heavy sites and AI-powered description refinement (e.g., OpenAI integration).  
+
+---
+
+✅ Focused on **simplicity, reliability, and scalability**.  
